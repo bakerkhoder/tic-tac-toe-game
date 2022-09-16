@@ -47,4 +47,21 @@ function handleCellClick(e) {
 	}
 }
 
-f
+function endGame(draw){
+    if(draw){
+        winningMessageElement.innerText="it is a draw"
+    }
+    else{
+        winningMessageElement.innerText=`player with ${isPlayer_O_Turn ? "red's":"yellow's"} wins`
+    }
+    winningMessageElement.classList.add("sow")
+}
+function isDraw() {
+	return [...cellElements].every(cell => {
+		return cell.classList.contains(PLAYER_X_CLASS) || cell.classList.contains(PLAYER_O_CLASS)
+	})
+}
+function placeMark(cell, currentClass) {
+	cell.classList.add(currentClass)
+}
+
