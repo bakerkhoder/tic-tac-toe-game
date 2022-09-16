@@ -60,3 +60,22 @@ body {
 .cell.circle {
     cursor: not-allowed;
 }
+/* for cross */
+.board.x .cell:not(.circle):not(.x):hover {
+    background: radial-gradient(#d4d802 60%, transparent 60%);
+}
+
+/* for cross (set) */
+.cell:not(.circle).x {
+    background: radial-gradient(#d4d802 60%, transparent 60%);
+}
+/* for circle */
+.board.circle .cell:not(.circle):not(.x):hover {
+    background: radial-gradient(#d80202 60%, transparent 60%);
+}
+
+/* for circle (set) */
+.cell:not(.x).circle {
+    background: radial-gradient(#d80202 60%, transparent 60%);
+    
+}
