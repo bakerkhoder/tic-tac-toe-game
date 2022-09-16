@@ -1,5 +1,6 @@
 const PLAYER_X_CLASS = 'x'
 const PLAYER_O_CLASS = 'circle'
+/*defining all posible combination win */
 const WINNING_COMBINATIONS = [
 	[0, 1, 2],
 	[3, 4, 5],
@@ -18,7 +19,7 @@ const winningMessageTextElement = document.getElementById('winningMessageText')
 let isPlayer_O_Turn = false
 
 startGame()
-
+/* starting game by specifying that x or("red")is  the one who start*/ 
 restartButton.addEventListener('click', startGame)
 
 function startGame() {
@@ -32,7 +33,7 @@ function startGame() {
 	setBoardHoverClass()
 	winningMessageElement.classList.remove('show')
 }
-
+/* defining functions to swap the turn or ending the game */
 function handleCellClick(e) {
 	const cell = e.target
 	const currentClass = isPlayer_O_Turn ? PLAYER_O_CLASS : PLAYER_X_CLASS
@@ -61,6 +62,7 @@ function isDraw() {
 		return cell.classList.contains(PLAYER_X_CLASS) || cell.classList.contains(PLAYER_O_CLASS)
 	})
 }
+/* adding the current class which specify who is the cuurent player */
 function placeMark(cell, currentClass) {
 	cell.classList.add(currentClass)
 }
@@ -68,6 +70,7 @@ function placeMark(cell, currentClass) {
 function swapTurns() {
 	isPlayer_O_Turn = !isPlayer_O_Turn
 }
+/* setting the hover by checking who is the current player */
 function setBoardHoverClass() {
 	boardElement.classList.remove(PLAYER_X_CLASS)
 	boardElement.classList.remove(PLAYER_O_CLASS)
